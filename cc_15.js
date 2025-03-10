@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Prevent event propagation on risk cards (Task 6)
+    // Prevent event propagation on risk cards (Task 6: Handling Event Propagation)
     riskDashboard.addEventListener("click", (e) => {
         if (!e.target.classList.contains("resolveBtn")) {
             console.log("Dashboard clicked, but not a risk card action.");
@@ -71,3 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Test Cases
     addRiskItem("Data Breach", "High", "IT");
     addRiskItem("Supply Chain Disruption", "Medium", "Operations");
+
+// Task 6: Handling Event Propagation
+	//Task 6 is embedded within Task 3: Removing Risk Items and Task 5: Bulk Risk Updates for clarity and efficiency purposes.
