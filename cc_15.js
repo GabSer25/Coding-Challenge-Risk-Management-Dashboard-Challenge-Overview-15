@@ -43,3 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         riskForm.reset();
     });
 
+// Task 4: Categorizing Risks by Level
+	// Task 4 is embedded within Task 2: Adding Risk Items Dynamically for clarity and efficiency purposes.
+
+
