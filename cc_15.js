@@ -24,4 +24,22 @@ document.addEventListener("DOMContentLoaded", () => {
             <button class="resolveBtn">Resolve</button>
         `;
 
+ // Task 3: Removing Risk Items
+        riskCard.querySelector(".resolveBtn").addEventListener("click", (e) => {
+            e.stopPropagation(); // (Task 6: Handling Event Propagation) Prevent event bubbling
+            riskCard.remove();
+        });
+
+        riskDashboard.appendChild(riskCard);
+    }
+
+    // Form Submission - Add Risk
+    riskForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("riskName").value;
+        const level = document.getElementById("riskLevel").value;
+        const department = document.getElementById("department").value;
+        addRiskItem(name, level, department);
+        riskForm.reset();
+    });
 
