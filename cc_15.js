@@ -46,4 +46,28 @@ document.addEventListener("DOMContentLoaded", () => {
 // Task 4: Categorizing Risks by Level
 	// Task 4 is embedded within Task 2: Adding Risk Items Dynamically for clarity and efficiency purposes.
 
+// Task 5: Bulk Risk Updates
+    increaseRiskBtn.addEventListener("click", () => {
+        document.querySelectorAll(".riskCard").forEach(card => {
+            if (card.classList.contains("low")) {
+                card.classList.remove("low");
+                card.classList.add("medium");
+                card.innerHTML = card.innerHTML.replace("Low", "Medium");
+            } else if (card.classList.contains("medium")) {
+                card.classList.remove("medium");
+                card.classList.add("high");
+                card.innerHTML = card.innerHTML.replace("Medium", "High");
+            }
+        });
+    });
 
+    // Prevent event propagation on risk cards (Task 6)
+    riskDashboard.addEventListener("click", (e) => {
+        if (!e.target.classList.contains("resolveBtn")) {
+            console.log("Dashboard clicked, but not a risk card action.");
+        }
+    });
+
+    // Test Cases
+    addRiskItem("Data Breach", "High", "IT");
+    addRiskItem("Supply Chain Disruption", "Medium", "Operations");
